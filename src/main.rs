@@ -6,5 +6,9 @@ fn main() {
         Ok(docker) => docker,
         Err(e) => { panic!("{}", e); }
     };
+    let images = match docker.get_images(false) {
+        Ok(images) => images,
+        Err(e) => { panic!("{}", e); }
+    };
 
 }
