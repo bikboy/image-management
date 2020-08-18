@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 rs-docker="0.0.58"
+clap="2.33.3"
