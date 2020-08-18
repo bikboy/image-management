@@ -48,7 +48,10 @@ fn main() {
                 println!("Age: {:?}", delta);
                 println!("Tag: {:?}", nametag[1]);
                 if delta > ret {
-                    println!("Those tags will be deleted : {:?}", nametag[1]);
+                    let statuses = match docker.delete_image(&r) {
+                        Ok(statuses) => statuses,
+                        Err(e) => { panic!("{}", e); }
+                    };
                 }
 
             }
